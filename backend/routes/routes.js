@@ -11,6 +11,9 @@ router.post('/time', update_time)
 
 router.get('/getall', get_all)
 
+router.get('/hello', (req,res)=>{
+    res.json({message: "hello"})
+})
 
 
 module.exports = router;
