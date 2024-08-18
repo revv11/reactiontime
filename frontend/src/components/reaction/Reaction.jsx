@@ -20,11 +20,18 @@ const Reaction = ()=>{
     useEffect(() => {
         // Get a cookie
         if(cookies.get('jwt')){
-            const token = cookies.get('jwt')
-            const id = jwtDecode(token).id;
-            setId(id);
-            setRegister(false);
+            try{
+                const token = cookies.get('jwt')
+                const id = jwtDecode(token).id;
+                setId(id);
+                setRegister(false);
+
+            }
+            catch(err){
+                console.log(err)
+            }
         }
+        
         
        
 
